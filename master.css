@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+div.game-info {
+  position: relative;
+  padding: 40px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.game-info .x-player div.x-score {
+  position: absolute;
+  bottom: -80px;
+  font-size: 60px;
+}
+div.game-info .o-player div.o-score {
+  position: absolute;
+  bottom: -80px;
+  font-size: 60px;
+}
+
+div.game {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  position: relative;
+  width: 450px;
+  height: 450px;
+  background-color: #000;
+  margin: 16px auto 0;
+}
+div.game div.square {
+  background-color: #bdbdbd;
+  padding: 10px;
+  width: 146px;
+  height: 146px;
+  transition: 100ms;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 90px;
+}
+div.game div.square:hover {
+  background-color: #6b6b6b;
+}
+div.game div.square.win {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.x-player,
+.o-player {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 90px;
+  border: 2px solid rgba(91, 207, 14, 0.9529411765);
+  padding: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.x-player.disabled,
+.o-player.disabled {
+  border-color: white;
+  opacity: 0.3;
+}
+
+.x-player {
+  left: 45px;
+}
+
+.o-player {
+  right: 45px;
+}
+
+@media (max-width: 575px) {
+  div.game {
+    width: 300px;
+    height: 300px;
+    margin: 100px auto;
+  }
+  div.game div.square {
+    width: 97px;
+    height: 97px;
+  }
+}
+
+.show-winner {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+}
